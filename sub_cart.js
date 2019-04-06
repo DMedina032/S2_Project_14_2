@@ -5,8 +5,8 @@
    Tutorial 12
    Case Problem 2
 
-   Author: 
-   Date:   
+   Author: Dajah Medina
+   Date:   4.5.19
 
    Filename: sub_cart.js
 
@@ -21,4 +21,12 @@
       the customer.
 
 */
+window.addEventListener("load", setCart);
 
+function setCart() {
+      var addButtons = randInt();
+}
+
+for (var i = 0; i <= addButtons; i++) {
+
+}
