@@ -21,24 +21,27 @@
       the customer.
 
 */
+// This eventListener runs the setCart function when the page is loaded. 
 window.addEventListener("load", setCart);
-
+//This function will define event handlers. The addButtons function is declared that belongs to the class. 
 function setCart() {
       var addButtons = document.getElementsByClassName("addButton");
-      for (var i = 0; i < addButtons; i++) {
-            addButtons[i].onclick.addItem;
+      //Loops through the buttons collection for the event handler to be ran when clicked.
+      for (var i = 0; i < addButtons.length; i++) {
+            addButtons[i].onclick = addItem;
       }
 }
 
 
-
+//This function is added for the shopping cart when it is clicked. The nextElementSibling is used to reference the next sibling to the target of the event object. the foodItem varible is declared which is set to a value of the id attribute of foodItem. The foodItem is stored in foodDescription. To create a copy of the foodItem element and its decendants, cloneNode is used.
 function addItem(e) {
       var foodItem = e.target.nextElementSibling;
       var foodID = foodItem.getAttribute("id");
       var foodDescription = foodItem.cloneNode(true);
       var cartBox = document.getElementById("cart");
       var duplicateOrder = false;
-      for (let n = cartBox.firstChild; n = n.nextElementSibling; n != null) {
+      //Loop thrtough the element child nodes of CartBox to detemine if the user palced the order or not and run through it. 
+      for (var n = cartBox.firstChild; n = n.nextElementSibling; n !== null) {
             if (n.id === foodID) {
                   duplicateOrder = true;
                   n.firstChild.textContent++;
